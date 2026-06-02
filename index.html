@@ -134,9 +134,22 @@
 
         .hero-img img {
             width: 100%;
-            height: auto;
-            max-width: 400px; /* 限制图片最大宽度 */
-            border: 1px solid var(--border-color); /* 细线条边框 */
+            /* 1. 将原本死板的横版变成优雅的画廊竖版比例 */
+            height: 480px; 
+            object-fit: cover; /* 智能裁剪，保证你的人像和背景不会变形缩放 */
+            object-position: 75% center; /* 自动将焦点向右移动，完美凸显出右边的人像和美丽的莫奈睡莲 */
+            
+            /* 2. 软化边缘，融入米白底色 */
+            border-radius: 4px; /* 极其微小的圆角，保留高级感的同时不尖锐 */
+            border: 1px solid rgba(37, 37, 37, 0.05); /* 极淡的边框 */
+            
+            /* 3. 加上美术馆画作般的微弱呼吸感阴影 */
+            box-shadow: 0 15px 35px rgba(74, 93, 78, 0.08); /* 融入了一丝丝伊索绿的微影，让图片和网页融为一体 */
+            transition: transform 0.4s ease;
+        }
+
+        .hero-img img:hover {
+            transform: scale(1.02); /* 鼠标放上去时有极其轻微的放大互动感 */
         }
 
         /* 通用布局节 */
